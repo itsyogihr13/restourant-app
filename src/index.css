@@ -1,13 +1,227 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.formdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  border: 1px solid rgb(230, 226, 226);
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #ff6b6b;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #e64a4a;
+}
+
+p {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  form {
+    width: 80%;
+  }
+}
+.restaurant-list-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.restaurant-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.restaurant-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.restaurant-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.restaurant-rating {
+  color: #ffa500;
+}
+
+.restaurant-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.responsive-poster-image {
+  max-width: 100%;
+  height: 50%;
+  margin-top: 10px;
+}
+.image-overlay {
+  position: relative;
+  display: inline-block;
+}
+.Link-tag {
+  text-decoration: none;
+  color: inherit;
+}
+/* .restaurant-image,
+.fastor-logo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fastor-logo-overlay {
+  z-index: 1;
+  opacity: 0.8;
+} */
+.restaurant-item {
+  transition: transform 0.2s, box-shadow 0.3s;
+  transform: scale(1);
+}
+
+.restaurant-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.restaurant-detail-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.restaurant-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.restaurant-details li {
+  margin-bottom: 10px;
+}
+
+.restaurant-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.superimpose-button,
+.share-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.superimpose-button:hover,
+.share-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .restaurant-detail-container {
+    padding: 10px;
+  }
+
+  .restaurant-details li {
+    font-size: 14px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .superimpose-button,
+  .share-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.not-found {
+  text-align: center;
+  font-size: 18px;
+  color: red;
 }
