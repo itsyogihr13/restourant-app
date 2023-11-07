@@ -4,16 +4,8 @@ import axios from "axios";
 import "../index.css";
 export const Register = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+
   const [phone, setPhone] = useState();
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,41 +27,21 @@ export const Register = () => {
 
   return (
     <div className="formdiv">
-      <h2>Registration</h2>
+      <h2>Enter Your Mobile Number for Registration</h2>
+
+      <br />
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
         <input
           type="tel"
           name="mobile"
           placeholder="Mobile Number"
           value={phone}
+          maxLength={10}
           onChange={(e) => setPhone(e.target.value)}
           required
         />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Register</button>
+
+        <button type="submit">Register </button>
       </form>
       <p>
         Already have an account? <Link to="/login">Login</Link>

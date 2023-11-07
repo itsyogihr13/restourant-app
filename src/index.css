@@ -35,6 +35,63 @@ form {
   text-align: center;
   border: 1px solid rgb(230, 226, 226);
 }
+.otp-verification {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.otp-verification h2 {
+  font-size: 24px;
+}
+
+.otp-verification p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.otp-verification input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.otp-verification button {
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  .otp-verification {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .otp-verification h2 {
+    font-size: 20px;
+  }
+
+  .otp-verification p {
+    font-size: 14px;
+  }
+
+  .otp-verification input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .otp-verification button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
 
 input {
   width: 90%;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 function Login() {
   const [phone, setPhone] = useState("");
@@ -25,7 +25,6 @@ function Login() {
         payload
       );
       let token = responce.data.data.token;
-      // console.log(responce.data.data.token);
       localStorage.setItem("token", JSON.stringify(token));
       console.log(token);
       navigate("/restaurant-list");
@@ -35,19 +34,30 @@ function Login() {
   };
 
   return (
-    <div className="formdiv">
-      <h1>Login</h1>
+    <div
+      style={{
+        border: "1px solid black",
+      }}
+      className="otp-verification formdiv"
+    >
+      <h2>Enter Your Mobile Number</h2>
+      <p>We will send you the 4-digit verification code</p>
       <input
         type="tel"
         name="mobile"
         placeholder="Mobile Number"
         value={phone}
+        maxLength={10}
         onChange={(e) => setPhone(e.target.value)}
         required
       />
-      <button onClick={handleSendOTP}>Send OTP</button>
+      <button onClick={handleSendOTP}>Send OTP</button> <br />
+      <br />
       {otpSent && (
-        <div>
+        <div className="otp-verification">
+          <h2>OTP Verification</h2>
+          <p>Enter the verification code we just sent on your Mobile Number.</p>
+
           <input
             type="text"
             placeholder="OTP"
@@ -55,6 +65,9 @@ function Login() {
             onChange={(e) => setOtp(e.target.value)}
           />
           <button onClick={handleSubmit}>Login</button>
+          <p>
+            Didn’t received code? <Link to="/">Resend</Link>
+          </p>
         </div>
       )}
     </div>
